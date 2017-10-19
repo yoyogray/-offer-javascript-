@@ -92,7 +92,7 @@
     
 
     // 求二叉树的深度
-    function deep(root){
+    // function deep(root){
     //     if(root == null){
     //         return 0
     //     };
@@ -102,27 +102,31 @@
     // }
 
 
-    function deep(root){
-        if(root == null) return 0;
-        var left = deep(root.left);
-        var right = deep(root.right);
-        return (left > right)?left + 1:right+1
-    }
+
+    // 利用求二叉树深度来判断是否为平衡二叉树
+    // function deep(root){
+    //     if(root == null) return 0;
+    //     var left = deep(root.left);
+    //     var right = deep(root.right);
+    //     return (left > right)?left + 1:right+1
+    // }
 
 
-    function isbalance(root){
-        if(root == null){
-            return true;
-        }
-        var left = deep(root.left);
-        var right = deep(root.right);
-        if(Math.abs(left - right) == 1){
-            return true;
-        }else{
-            return false
-        }
-        return isbalance(root.left) && isbalance(root.right)
-    }
+    // function isbalance(root){
+    //     if(root == null){
+    //         return true;
+    //     }
+    //     var left = deep(root.left);
+    //     var right = deep(root.right);
+    //     if(Math.abs(left - right) == 1){
+    //         return true;
+    //     }else{
+    //         return false
+    //     }
+    //     return isbalance(root.left) && isbalance(root.right)
+    // }
+
+
 
 
 
