@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    
+</head>
+<body>
+    <script>
+       
+
+        
+
+    //    斐波那契
+        // function f(n){
+        //     if(n == 0||n==1){
+        //         return n
+        //     }else{
+        //         return (f(n-1)+f(n-2))
+        //     }
+        // }
+        // f(10)
+
+        
+            // 扑克
+
+            // function isContinuous(numbers){
+            //     var kings = 0,
+            //         len = numbers.length,
+            //         flag = true;
+                
+            //     for(var i = 0;i<len;i++){
+            //         if(numbers[i] === 0){
+            //             numbers.splice(i,1);
+            //             kings++
+            //             // console.log(numbers + " " + kings)                        
+            //         }
+            //     }
+            //     numbers.sort(function(a,b){
+            //         return a - b
+            //     })//升序
+            //     console.log(numbers);
+
+            //     for(var j = 0;j<len;j++){
+            //         // flag = (numbers[j+1] - numbers[j]>kings+1)?false:true 
+            //         if(numbers[j+1] - numbers[j] > kings+1){
+            //             flag = false;
+            //         }
+            //     }
+                
+            //     return flag;
+                
+            // }
+
+            // console.log(isContinuous([10,11,14,0,0]))
+
+
+            
+
+
+
+    // function isok(numbers){
+    //     var len = numbers.length,
+    //         kings = 0,
+    //         flag = true;
+    //     for (var i = 0; i < len; i++) {
+    //         if(numbers[i] === 0){
+    //             numbers.splice(i,1)
+    //             i--;
+    //             kings++
+    //         }
+    //     }
+    //     numbers.sort(function(a,b){
+    //         return a - b;
+    //     })
+    //     console.log(numbers);
+    //     for(var i = 0;i<len;i++){
+    //         if((numbers[i+1] - numbers[i]) > (kings + 1)){
+    //             flag = false;
+    //         }
+    //     }
+    //     console.log(flag)
+    // }
+    // isok([7,8,0,0,1])
+
+    // 递归求树的深度、
+
+ 
+    
+    
+
+    // 求二叉树的深度
+    function deep(root){
+    //     if(root == null){
+    //         return 0
+    //     };
+    //     var left = deep(root.left);
+    //     var right = deep(root.right);
+    //     return (left > right)?left+1:right+1
+    // }
+
+
+    function deep(root){
+        if(root == null) return 0;
+        var left = deep(root.left);
+        var right = deep(root.right);
+        return (left > right)?left + 1:right+1
+    }
+
+
+    function isbalance(root){
+        if(root == null){
+            return true;
+        }
+        var left = deep(root.left);
+        var right = deep(root.right);
+        if(Math.abs(left - right) == 1){
+            return true;
+        }else{
+            return false
+        }
+        return isbalance(root.left) && isbalance(root.right)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+    </script>
+
+</body>
+</html>
