@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>offer</title>
+</head>
+<body>
+    <div></div>
+    <script>
+    // 输出所有和为s的连续正整数序列
+    function FindContinuousSequence(sum)
+    {
+        // write code here
+        if(sum<2) return[];
+        var result=[];
+        var a=1,b=2,s=3;
+        while(a<=Math.floor(sum/2)){
+            if(s<sum){
+                b++;
+                s+=b;
+            }else if(s>sum){
+                s-=a
+                a++;            
+            }else{
+                var temp=[];
+                for(var i=a;i<=b;i++){
+                    temp.push(i)
+                }
+                result.push(temp)
+                if(a+1<b){
+                    s-=a;
+                    a++
+                }else{
+                    break;
+                }
+            }        
+        }
+        return result;
+    }
+    
+
+    //数组找到两个数和为s
+
+    function find(arr,s){
+        if(arr.length < 2){
+            return []
+        }
+        var len = arr.length;
+        var start = 0;
+        var end = len - 1;
+        var sum = arr[start] + arr[end]
+        while(end>start){
+            if(s>sum){
+                start++
+            }else if(s<sum){
+                end--
+            }else{
+                return [arr[start],arr[end]]
+            }
+        }
+        return []
+    }
+
+
+    // 第一个只出现一次的字符
+    function findFirstOne(str){
+        var arr = str.split(""),
+            len = arr.length,
+            map = {};
+        arr.map(function(item){
+            if(!map[item]){
+                map[item] = 1;
+            }else{
+                map[item]++
+            }
+        })
+        for(var i = 0;i<len;i++){
+          if(map[arr[i]] == 1){
+              return i
+          }
+        }
+        return -1
+    }
+    
+    </script>
+</body>
+</html>

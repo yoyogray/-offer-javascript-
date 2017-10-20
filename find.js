@@ -1,3 +1,5 @@
+
+//二维数组查找某个数字
 function find(target,arr){
     var row = arr.length;
     var col = array[0].length;
